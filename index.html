@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Google Fonts: Inter & Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bfe0fe',
+                            300: '#93cbfe',
+                            400: '#60b0fd',
+                            500: '#3b92f7',
+                            600: '#2575eb',
+                            deep: '#0f172a',
+                        },
+                        brand: {
+                            orange: '#fca130',
+                            orangeHover: '#e08e20'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #fafbfc;
+        }
+        .blur-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        /* Smooth transitions */
+        .hover-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px -10px rgba(147, 203, 254, 0.4);
+        }
+        /* Custom styles to match image_2b90bb.png background & typography */
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.5) 50%, rgba(15, 23, 42, 0.4) 100%), 
+                              url('https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-pastel-200">
+
+<!-- Navigation Bar: Transparent at top, blurs and solidifies on scroll -->
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 text-white bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+        <a href="#" class="text-lg font-bold tracking-tight flex items-center gap-2">
+            <span class="text-2xl font-light">∞</span>
+            <span class="tracking-widest text-sm font-semibold uppercase">icomssam</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-10 text-xs font-medium tracking-wider uppercase opacity-90">
+            <a href="#about" class="hover:text-pastel-200 transition-colors">소개 (Intro)</a>
+            <a href="#career" class="hover:text-pastel-200 transition-colors">진로 (Career)</a>
+            <a href="#books" class="hover:text-pastel-200 transition-colors">독서 (Books)</a>
+        </nav>
+        <div class="flex items-center gap-3">
+            <a href="mailto:your_email@example.com" class="text-xs border border-white/30 hover:bg-white hover:text-slate-900 px-5 py-2.5 rounded-full font-medium transition-all duration-200 tracking-wide flex items-center gap-1.5">
+                Get started <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section (Mimicking image_2b90bb.png layout & vibe) -->
+    <section id="about" class="hero-bg min-h-screen flex items-center relative text-white pt-20">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-20">
+            
+            <!-- Left Side: Large, focused headings and peach-orange CTA -->
+            <div class="lg:col-span-8 space-y-8 max-w-2xl animate-fade-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] text-white">
+                    배움을 디자인하고,<br>
+                    가치를 실현하는 인재
+                </h1>
+                <p class="text-base md:text-lg text-slate-200/90 leading-relaxed font-light max-w-xl">
+                    저는 디자인적 사고와 기술적 해결책의 균형을 중요하게 생각하는 예비 디자이너이자 개발자입니다. 넓은 시야을 갖추기 위해 다양한 분야의 지식을
+                    책과 프로젝트를 통해 습득하고 있으며, 단순한 문제 해결을 넘어 사용자 경험을 혁신하는 것을 목표로 삼고 있습니다.
+                </p>
+                
+                <!-- Premium Gold Orange Pill Button -->
+                <!--div class="pt-4">-->
+                    <!--<a href="#career" class="inline-flex items-center gap-2 bg-[#fca130] hover:bg-[#e08e20] text-black font-semibold text-sm px-6 py-4 rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-orange-500/10">-->
+                        <!--<span>Get started free</span>-->
+                        <!--<i data-lucide="arrow-right" class="w-4 h-4"></i>-->
+                    <!--</a>-->
+                <!--</div-->
+            </div>
+            
+            <!-- Right Side: Balanced Space for background focus -->
+            <div class="lg:col-span-4 hidden lg:block">
+                <!-- Spacing preserved to let the gorgeous reading person visual shine from background -->
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <span class="text-[10px] uppercase tracking-widest text-slate-300 font-medium">더 알아보기</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- Career & Vision Section (진로) -->
+    <section id="career" class="bg-pastel-50/70 border-b border-pastel-100 py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-pastel-600 tracking-widest uppercase">My Future Roadmap</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">지향하는 진로와 비전</h2>
+                <div class="w-12 h-1 bg-pastel-300 mx-auto rounded-full"></div>
+                <p class="text-sm text-slate-500">배움을 실무로, 아이디어를 현실로 옮기며 성장해 나갈 저의 지향점들입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-pastel-100 hover-card shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-pastel-100 flex items-center justify-center text-pastel-600">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">UX / UI 디자인</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            사용자가 프로덕트와 상호작용하는 모든 여정을 더 쉽고, 아름답고, 직관적으로 설계합니다. 감성에 논리를 더한 설득력 있는 디자인을 연구합니다.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-pastel-600">사용자 경험 혁신</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-pastel-400"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-pastel-100 hover-card shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-pastel-100 flex items-center justify-center text-pastel-600">
+                            <i data-lucide="code-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">프론트엔드 개발</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            디자인 시안을 완성도 높은 고성능 웹 서비스로 완벽히 구현합니다. 깔끔하고 재사용 가능한 컴포넌트 설계 및 최적의 인터랙션을 추구합니다.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-pastel-600">웹 표준 및 최적화</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-pastel-400"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-pastel-100 hover-card shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-pastel-100 flex items-center justify-center text-pastel-600">
+                            <i data-lucide="line-chart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">데이터 기반 서비스 기획</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            사용자의 행동 데이터를 분석하여 숨겨진 니즈를 발견하고, 비즈니스 목표와 사용자 만족을 동시에 이루어내는 전략을 수립합니다.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-pastel-600">인사이트 도출</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-pastel-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading & Knowledge Base Section (독서 활동) -->
+    <section id="books" class="max-w-5xl mx-auto px-6 py-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div class="space-y-3">
+                <span class="text-xs font-bold text-pastel-600 tracking-widest uppercase">Reading & Growth</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">독서 활동 내용 정리</h2>
+                <div class="w-12 h-1 bg-pastel-300 rounded-full"></div>
+                <p class="text-sm text-slate-500">지식의 기반을 넓히고 성장 동력이 되어준 보물 같은 도서들입니다.</p>
+            </div>
+
+            <!-- Categories Filter -->
+            <div class="flex flex-wrap gap-2 text-xs font-medium">
+                <button onclick="filterBooks('all')" id="btn-all" class="category-btn px-4 py-2 rounded-full bg-pastel-600 text-white shadow-sm transition-all">전체</button>
+                <button onclick="filterBooks('design')" id="btn-design" class="category-btn px-4 py-2 rounded-full bg-white text-slate-600 border border-slate-200 hover:border-pastel-200 transition-all">디자인</button>
+                <button onclick="filterBooks('tech')" id="btn-tech" class="category-btn px-4 py-2 rounded-full bg-white text-slate-600 border border-slate-200 hover:border-pastel-200 transition-all">기술/개발</button>
+                <button onclick="filterBooks('insight')" id="btn-insight" class="category-btn px-4 py-2 rounded-full bg-white text-slate-600 border border-slate-200 hover:border-pastel-200 transition-all">인사이트</button>
+            </div>
+        </div>
+
+        <!-- Book Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="book-grid">
+            <!-- Book 1 (Design) -->
+            <div class="book-card bg-white rounded-2xl border border-pastel-100 shadow-sm overflow-hidden hover-card flex flex-col justify-between" data-category="design">
+                <div>
+                    <!-- Book Cover Placeholder with custom soft gradient and emoji/icon -->
+                    <div class="h-44 bg-gradient-to-br from-blue-100 to-sky-200 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                        <div class="w-20 h-28 bg-white rounded-md shadow-md flex flex-col justify-between p-2.5 border-l-4 border-pastel-500">
+                            <span class="text-[10px] text-pastel-500 font-bold">DESIGN</span>
+                            <span class="text-2xl text-center">🎨</span>
+                            <span class="text-[8px] text-slate-400 text-right">Norman</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[11px] bg-sky-50 text-sky-600 border border-sky-200 px-2 py-0.5 rounded-full font-medium">디자인</span>
+                            <span class="text-xs text-slate-400">도널드 노먼 저</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug line-clamp-1">디자인과 인간 심리</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                            인간의 인지적 행동 방식을 바탕으로, 사물이 어떻게 디자인되어야 인간이 오인지 없이 완벽하게 소통할 수 있는지를 깨달았습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-pastel-600">진로 연계: 행동 유도 설계</span>
+                    <button onclick="openBookModal(0)" class="text-xs bg-slate-50 hover:bg-pastel-100 hover:text-pastel-700 text-slate-600 px-3 py-1.5 rounded-lg transition-colors font-medium">더보기</button>
+                </div>
+            </div>
+
+            <!-- Book 2 (Tech) -->
+            <div class="book-card bg-white rounded-2xl border border-pastel-100 shadow-sm overflow-hidden hover-card flex flex-col justify-between" data-category="tech">
+                <div>
+                    <div class="h-44 bg-gradient-to-br from-indigo-100 to-pastel-200 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                        <div class="w-20 h-28 bg-white rounded-md shadow-md flex flex-col justify-between p-2.5 border-l-4 border-indigo-500">
+                            <span class="text-[10px] text-indigo-500 font-bold">TECH</span>
+                            <span class="text-2xl text-center">💻</span>
+                            <span class="text-[8px] text-slate-400 text-right">Robert</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[11px] bg-indigo-50 text-indigo-600 border border-indigo-200 px-2 py-0.5 rounded-full font-medium">기술/개발</span>
+                            <span class="text-xs text-slate-400">로버트 C. 마틴 저</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug line-clamp-1">클린 코드 (Clean Code)</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                            단순히 돌아가는 코드를 작성하는 것을 넘어, 가독성이 높고 유지보수가 쉬운 클린한 아키텍처를 설계하는 것의 중요성을 인지했습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-pastel-600">진로 연계: 견고한 프론트 개발</span>
+                    <button onclick="openBookModal(1)" class="text-xs bg-slate-50 hover:bg-pastel-100 hover:text-pastel-700 text-slate-600 px-3 py-1.5 rounded-lg transition-colors font-medium">더보기</button>
+                </div>
+            </div>
+
+            <!-- Book 3 (Insight) -->
+            <div class="book-card bg-white rounded-2xl border border-pastel-100 shadow-sm overflow-hidden hover-card flex flex-col justify-between" data-category="insight">
+                <div>
+                    <div class="h-44 bg-gradient-to-br from-teal-100 to-sky-200 flex items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                        <div class="w-20 h-28 bg-white rounded-md shadow-md flex flex-col justify-between p-2.5 border-l-4 border-teal-500">
+                            <span class="text-[10px] text-teal-500 font-bold">INSIGHT</span>
+                            <span class="text-2xl text-center">💡</span>
+                            <span class="text-[8px] text-slate-400 text-right">Kahneman</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[11px] bg-teal-50 text-teal-600 border border-teal-200 px-2 py-0.5 rounded-full font-medium">인사이트</span>
+                            <span class="text-xs text-slate-400">대니얼 카너먼 저</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug line-clamp-1">생각에 관한 생각</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                            인간의 두 가지 인지 시스템(빠른 생각과 느린 생각)을 통해 사용자가 웹사이트를 탐색할 때 겪는 피로도를 체계적으로 이해하게 되었습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-pastel-600">진로 연계: 인지 오류 방지 기획</span>
+                    <button onclick="openBookModal(2)" class="text-xs bg-slate-50 hover:bg-pastel-100 hover:text-pastel-700 text-slate-600 px-3 py-1.5 rounded-lg transition-colors font-medium">더보기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Book Detail Modal -->
+<div id="book-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-pastel-100 transform scale-95 transition-all duration-300 flex flex-col">
+        <!-- Modal Cover Area with background colored by JS -->
+        <div id="modal-cover-bg" class="h-32 bg-gradient-to-r from-pastel-200 to-pastel-400 p-6 relative flex items-end">
+            <button onclick="closeBookModal()" class="absolute top-4 right-4 text-slate-700 hover:text-slate-900 bg-white/60 hover:bg-white rounded-full p-1.5 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <span id="modal-tag" class="text-[10px] font-bold tracking-widest bg-white text-pastel-600 px-2.5 py-1 rounded-full border border-pastel-200/50 uppercase">DESIGN</span>
+        </div>
+        
+        <!-- Modal Content -->
+        <div class="p-6 space-y-4">
+            <div class="space-y-1">
+                <p id="modal-author" class="text-xs text-slate-400 font-medium">저자 이름</p>
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900">도서 제목</h3>
+            </div>
+            
+            <div class="bg-pastel-50 p-4 rounded-xl border border-pastel-100 space-y-1.5">
+                <span class="text-xs font-bold text-pastel-600 flex items-center gap-1">
+                    <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i> 핵심 깨달음 (Key Takeaway)
+                </span>
+                <p id="modal-insight" class="text-sm text-slate-700 leading-relaxed font-medium">
+                    사용자가 생각할 필요가 없을 정도로 직관적으로 다가가는 인터페이스를 만들기 위해, 도구와 대상이 일체감을 느껴야 한다는 시각을 얻음.
+                </p>
+            </div>
+
+            <div class="space-y-2">
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">진로와의 연계 성과</h4>
+                <p id="modal-career-relation" class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                    프론트엔드 컴포넌트를 설계할 때 시각적 피드백(눌림 효과, 올바른 아이콘 설계)을 사용자 행동 유도 규칙에 기반하여 구현하며, 사이트 내 사용자 이탈률을 유의미하게 감소시킬 수 있는 개발-기획 융합형 역량을 강화하고 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="bg-slate-50 px-6 py-4 flex justify-end border-t border-slate-100">
+            <button onclick="closeBookModal()" class="text-xs bg-pastel-600 hover:bg-pastel-700 text-white px-5 py-2 rounded-lg transition-colors font-semibold">닫기</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-pastel-100">
+    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+            <p class="text-xs text-slate-400">© 2026 Lovable Portfolio. All rights reserved.</p>
+            <p class="text-xs text-slate-300 mt-1">Inspired by clean, premium UI aesthetics.</p>
+        </div>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-1.5 text-xs font-bold text-pastel-600 hover:text-pastel-700 bg-pastel-50 border border-pastel-100 px-4 py-2.5 rounded-xl transition-all hover:scale-105">
+            <i data-lucide="arrow-up" class="w-4 h-4 animate-bounce"></i> 맨 위로 이동
+        </button>
+    </div>
+</footer>
+
+<script>
+    // Initialize Lucide Icons and Header Event Listeners
+    window.onload = function() {
+        lucide.createIcons();
+        
+        // Dynamic Header behavior on scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 80) {
+                // Change header to light solid blurred style
+                header.classList.remove('bg-transparent', 'text-white');
+                header.classList.add('blur-nav', 'bg-white/85', 'text-slate-900', 'border-b', 'border-pastel-100/60', 'shadow-sm');
+                
+                // Safely check if the border button exists before modifying classList
+                const borderBtn = header.querySelector('.border');
+                if (borderBtn) {
+                    borderBtn.classList.remove('border-white/30');
+                    borderBtn.classList.add('border-pastel-200', 'text-pastel-600', 'hover:bg-pastel-50');
+                }
+            } else {
+                // Restore transparency at top
+                header.classList.add('bg-transparent', 'text-white');
+                header.classList.remove('blur-nav', 'bg-white/85', 'text-slate-900', 'border-b', 'border-pastel-100/60', 'shadow-sm');
+                
+                // Safely check if the border button exists before modifying classList
+                const borderBtn = header.querySelector('.border');
+                if (borderBtn) {
+                    borderBtn.classList.add('border-white/30');
+                    borderBtn.classList.remove('border-pastel-200', 'text-pastel-600', 'hover:bg-pastel-50');
+                }
+            }
+        });
+    }
+
+    // Book Database for the interactive Modal
+    const bookDatabase = [
+        {
+            title: "디자인과 인간 심리",
+            author: "도널드 노먼 저",
+            tag: "디자인",
+            tagClass: "DESIGN",
+            coverGradient: "linear-gradient(to right, #bfe0fe, #93cbfe)",
+            insight: "사용자 본인이 제품 사용의 어려움을 탓하지 않도록, 행동 유도성(Affordance)과 훌륭한 개념적 모델을 통해 상호작용의 심리 구조를 직관적으로 풀어내야 함을 배웠습니다.",
+            careerRelation: "기획안이나 디자인 시안을 검토할 때, 사용자가 사전에 별도의 인지 학습 과정 없이도 버튼을 원활하게 클릭하고 경로를 탐색할 수 있는 직관적인 UI 마이크로 인터랙션을 설계하는 습관을 기르게 되었습니다."
+        },
+        {
+            title: "클린 코드 (Clean Code)",
+            author: "로버트 C. 마틴 저",
+            tag: "기술/개발",
+            tagClass: "TECH",
+            coverGradient: "linear-gradient(to right, #c7d2fe, #a5b4fc)",
+            insight: "코드의 가독성은 단순히 규칙을 따르는 것을 넘어, 협업 디자이너와 동료 개발자가 기획 사항의 로직을 손쉽게 추적할 수 있도록 돕는 사회적 윤리와도 같다는 깊은 통찰을 보았습니다.",
+            careerRelation: "유지보수하기 용이한 리액트/HTML 컴포넌트 분할 기법과, 변수 명의 시각적 직관성을 향상시키는 방법론을 고민하며 프로젝트 구현 시 협업 효율성을 대폭 향상시키는 데 이바지하고 있습니다."
+        },
+        {
+            title: "생각에 관한 생각",
+            author: "대니얼 카너먼 저",
+            tag: "인사이트",
+            tagClass: "INSIGHT",
+            coverGradient: "linear-gradient(to right, #99f6e4, #38bdf8)",
+            insight: "인간은 복잡한 고민(System 2)보다 쉽고 본능적인 선택(System 1)을 압도적으로 선호합니다. 웹서핑 시 사소하게 느려지는 인터페이스는 사용자의 시스템 2를 강제 동원해 결국 서비스 이탈을 부르게 됩니다.",
+            careerRelation: "데이터 기반으로 설계할 때 사용자의 화면 체류 및 과업 피로도를 분석하고 불필요한 절차를 제거해 내는 '미니멀 UI'의 중요성을 깨닫고, 불필요한 팝업을 과감하게 축소하는 지향성을 수립했습니다."
+        }
+    ];
+
+    // Filter Function
+    function filterBooks(category) {
+        // Toggle Active styles on buttons
+        const buttons = document.querySelectorAll('.category-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('bg-pastel-600', 'text-white', 'shadow-sm');
+            btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+        });
+
+        const activeBtn = document.getElementById(`btn-${category}`);
+        if(activeBtn) {
+            activeBtn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            activeBtn.classList.add('bg-pastel-600', 'text-white', 'shadow-sm');
+        }
+
+        // Filter cards
+        const cards = document.querySelectorAll('.book-card');
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Modal Operations
+    function openBookModal(index) {
+        const book = bookDatabase[index];
+        const modal = document.getElementById('book-modal');
+        const modalBg = document.getElementById('modal-cover-bg');
+        
+        document.getElementById('modal-title').innerText = book.title;
+        document.getElementById('modal-author').innerText = book.author;
+        document.getElementById('modal-tag').innerText = book.tag;
+        document.getElementById('modal-insight').innerText = book.insight;
+        document.getElementById('modal-career-relation').innerText = book.careerRelation;
+        
+        modalBg.style.backgroundImage = book.coverGradient;
+        
+        // Open Animation and Show
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.querySelector('div').classList.remove('scale-95');
+            modal.querySelector('div').classList.add('scale-100');
+        }, 10);
+    }
+
+    // Close Modal
+    function closeBookModal() {
+        const modal = document.getElementById('book-modal');
+        modal.querySelector('div').classList.remove('scale-100');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 200);
+    }
+
+    // Close on clicking outside container
+    window.onclick = function(event) {
+        const modal = document.getElementById('book-modal');
+        if (event.target == modal) {
+            closeBookModal();
+        }
+    }
+</script>
+
+</body>
+</html>
